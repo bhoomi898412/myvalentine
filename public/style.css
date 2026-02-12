@@ -167,3 +167,100 @@ h1{
 .stext{
     text-align: center;
 }
+
+/* 📱 MOBILE DEVICES */
+@media (max-width: 768px){
+
+    /* Home container */
+    .first-container{
+        width: 92%;
+        height: auto;
+        padding: 25px 15px;
+        margin: 20px auto;
+    }
+
+    h1{
+        font-size: 42px;   /* big text fix */
+    }
+
+    .heart-animate{
+        font-size: 55px;
+    }
+
+    .love-lines{
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .start{
+        width: 160px;
+        height: 45px;
+    }
+
+    /* Header area (second page) */
+    .calendar{
+        position: static;
+        transform: none;
+        margin-top: 15px;
+    }
+
+    .info{
+        position: static;
+        transform: none;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    .back{
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .first-main{
+        min-height: auto;
+        text-align: center;
+    }
+
+    /* Grid FIX 🔥 */
+    .second-main{
+        grid-template-columns: repeat(2, 1fr);  /* 4 → 2 */
+        gap: 12px;
+        padding: 12px;
+    }
+
+    /* Card FIX */
+    .card{
+        height: 260px;
+        filter: blur(0);   /* blur remove on mobile */
+    }
+
+    .img{
+        height: 140px;
+        width: 95%;
+    }
+
+    .text{
+        padding: 4px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* 📱 EXTRA SMALL PHONES */
+@media (max-width: 480px){
+
+    h1{
+        font-size: 34px;
+    }
+
+    .second-main{
+        grid-template-columns: 1fr;   /* 1 column */
+    }
+
+    .card{
+        height: 240px;
+    }
+}
