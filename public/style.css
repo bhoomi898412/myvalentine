@@ -6,11 +6,11 @@ body{
 /* home page */
 .first-container{
     background-color: rgb(255, 255, 255);
-    height: 600px;
-    width: 800px;
-    border: 5px;
-    border-radius: 25px;
-    margin: 40px auto;   /* ✅ CENTER FIX */
+    max-width: 800px;
+    width: 90%;
+    min-height: 600px;   /* height → flexible */
+    margin: 40px auto;
+    padding: 25px;
 }
 h1{
     font-family: 'Bubblegum Sans', cursive;
@@ -171,12 +171,17 @@ h1{
 /* 📱 MOBILE DEVICES */
 @media (max-width: 768px){
 
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
     /* Home container */
     .first-container{
-        width: 92%;
-        height: auto;
-        padding: 25px 15px;
-        margin: 20px auto;
+        width: 95%;
+        min-height: auto;
     }
 
     h1{
@@ -226,41 +231,48 @@ h1{
 
     /* Grid FIX 🔥 */
     .second-main{
-        grid-template-columns: repeat(2, 1fr);  /* 4 → 2 */
-        gap: 12px;
-        padding: 12px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* Card FIX */
     .card{
-        height: 260px;
         filter: blur(0);   /* blur remove on mobile */
+        height: auto;
+        padding: 10px 5px;
     }
 
     .img{
-        height: 140px;
-        width: 95%;
+       min-height: 140px;
     }
 
     .text{
-        padding: 4px;
-        font-size: 0.9rem;
+        flex: 2;
     }
 }
 
 
-/* 📱 EXTRA SMALL PHONES */
 @media (max-width: 480px){
 
-    h1{
-        font-size: 34px;
-    }
-
     .second-main{
-        grid-template-columns: 1fr;   /* 1 column */
+        grid-template-columns: 1fr;   /* 🔥 SINGLE COLUMN */
+        gap: 15px;
+        padding: 15px;
     }
 
     .card{
-        height: 240px;
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .img{
+        min-height: 160px;
+    }
+
+    .img img{
+        height: 160px;
+    }
+
+    h1{
+        font-size: 42px;   /* mobile safe */
     }
 }
