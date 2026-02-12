@@ -1,191 +1,178 @@
 body{
     background-color: rgb(240, 223, 238);
     margin: 0;
+    overflow-x: hidden;
+    font-family: 'Bubblegum Sans', cursive;
 }
 
-/* home page */
+/* ✅ HOME PAGE */
 .first-container{
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
+
     max-width: 800px;
     width: 90%;
-    min-height: 600px;   /* height → flexible */
+
     margin: 40px auto;
     padding: 25px;
+
+    border-radius: 25px;
+
+    /* 🔥 KEY FIX */
+    box-sizing: border-box;
 }
+
+/* Heading */
 h1{
-    font-family: 'Bubblegum Sans', cursive;
     color: rgb(177, 36, 170);
     font-size: 80px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0px;
-    text-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    text-shadow: 5px 5px 6px rgba(0,0,0,0.3);
 }
+
+/* Heart */
 .heart-animate{
     font-size: 100px;
-    display: inline-block;
+    display: block;
+    text-align: center;
     animation: heartColor 2.5s ease-in-out infinite;
 }
-/* 💗 white ↔ red smooth transition */
+
 @keyframes heartColor{
-    0%{
-        filter: brightness(1.8);    
-    }
-    50%{
-        filter: brightness(0.9) saturate(1.9);
-    }
-    100%{
-        filter: brightness(1.8);
-    }
+    0%{ filter: brightness(1.8); }
+    50%{ filter: brightness(0.9) saturate(1.9); }
+    100%{ filter: brightness(1.8); }
 }
-.heart-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+/* Text */
 .love-lines{
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 10px;
 }
-.center-line {
-    width: 120px;          /* line ki length */
-    height: 5px;          /* thickness */
-    background-color: #f79db1; /* romantic red */
-    border: none;
-    border-radius: 10px;
-    margin: 30px auto;    /* horizontally center */
-}
+
+/* Button */
 .start{
     height: 50px;
     width: 200px;
-    border: 5px;
+    border: none;
     background-color: #cb4562;
     border-radius: 50px;
     cursor: pointer;
     display: block;
-    margin: 30px auto;   /* ✨ center */
+    margin: 25px auto;
+    color: white;
+    font-size: 16px;
 }
 
+/* Divider */
+.center-line{
+    width: 120px;
+    height: 5px;
+    background-color: #f79db1;
+    border: none;
+    border-radius: 10px;
+    margin: 20px auto;
+}
 
-/* second page style */
+/* ✅ SECOND PAGE */
+.sec-container{
+    min-height: 100vh;
+}
+
+/* Header */
 .first-main{
-    width: 100%;
-    min-height: 180px;   /* space reserve hogi */
-    position: relative;  /* absolute children safe */
-}
-.calendar{
-    position: absolute;
-    top: 20px;              /* page ke top se distance */
-    left: 35%;
     text-align: center;
-}
-.info{
-    position: absolute;
-    font-family: 'Bubblegum Sans', cursive;
-    font-size: 1.5rem;
-    top: 90px;              /* page ke top se distance */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-.back{
-    position: absolute;
-    font-size: 40px;
-    top: 70px;
-    left: 20%;
+    padding-top: 20px;
 }
 
+.calendar{
+    font-size: 60px;
+    margin: 0;
+}
+
+.info{
+    font-size: 1.2rem;
+    margin: 5px 0 15px 0;
+}
+
+.back{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Grid */
 .second-main{
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
 }
-.card{
-    width: 100%;
-    height: 400px;
 
+/* Card */
+.card{
     background: #fff;
     border-radius: 16px;
 
-    /* soft romantic border */
     border: 2px solid rgba(203, 69, 98, 0.25);
 
-    /* smooth shadow */
     box-shadow: 
         0 6px 15px rgba(203, 69, 98, 0.25),
         0 2px 6px rgba(0, 0, 0, 0.08);
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: 0.25s ease;
 
-    /* ✨ MAGIC LINE */
     filter: blur(4px) brightness(0.95);
 }
+
 .card:hover{
     transform: translateY(-6px) scale(1.02);
-
-    box-shadow: 
-        0 14px 30px rgba(203, 69, 98, 0.35),
-        0 6px 12px rgba(0, 0, 0, 0.12);
-
-    /* ✨ REMOVE BLUR */
     filter: blur(0) brightness(1);
 }
+
+/* Image */
 .img{
-    flex: 7;
     width: 90%;
-    padding: 5px auto;
-    height: 230px;         
-    overflow: hidden;       
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    height: 180px;
+    margin-top: 12px;
+
+    overflow: hidden;
+    border-radius: 10px;
     box-shadow: 5px 7px 8px gray;
 }
+
 .img img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+/* Text */
 .text{
-    flex: 3;
-    padding: 8px;
-}
-.stext{
+    padding: 10px;
     text-align: center;
 }
 
-/* 📱 MOBILE DEVICES */
+.stext{
+    font-size: 1rem;
+}
+
+.thirs-main{
+    text-align: center;
+}
+
+/* ✅ TABLET */
 @media (max-width: 768px){
 
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-
-    /* Home container */
-    .first-container{
-        width: 95%;
-        min-height: auto;
-    }
-
     h1{
-        font-size: 42px;   /* big text fix */
+        font-size: 42px;
     }
 
     .heart-animate{
@@ -194,85 +181,41 @@ h1{
 
     .love-lines{
         font-size: 1rem;
-        text-align: center;
-        padding: 0 10px;
     }
 
-    .start{
-        width: 160px;
-        height: 45px;
-    }
-
-    /* Header area (second page) */
     .calendar{
-        position: static;
-        transform: none;
-        margin-top: 15px;
+        font-size: 36px;
     }
 
-    .info{
-        position: static;
-        transform: none;
-        font-size: 1rem;
-        margin: 10px 0;
-    }
-
-    .back{
-        position: static;
-        display: block;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .first-main{
-        min-height: auto;
-        text-align: center;
-    }
-
-    /* Grid FIX 🔥 */
     .second-main{
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Card FIX */
     .card{
         filter: blur(0);   /* blur remove on mobile */
-        height: auto;
-        padding: 10px 5px;
-    }
-
-    .img{
-       min-height: 140px;
-    }
-
-    .text{
-        flex: 2;
     }
 }
 
-
+/* ✅ MOBILE */
 @media (max-width: 480px){
 
-    .second-main{
-        grid-template-columns: 1fr;   /* 🔥 SINGLE COLUMN */
-        gap: 15px;
-        padding: 15px;
+    h1{
+        font-size: 34px;
     }
 
-    .card{
-        min-height: auto;
-        padding: 12px;
+    .heart-animate{
+        font-size: 48px;
+    }
+
+    .love-lines{
+        font-size: 0.95rem;
+    }
+
+    .second-main{
+        grid-template-columns: 1fr;
     }
 
     .img{
-        min-height: 160px;
-    }
-
-    .img img{
         height: 160px;
-    }
-
-    h1{
-        font-size: 42px;   /* mobile safe */
     }
 }
